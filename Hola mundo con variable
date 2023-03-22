@@ -1,2 +1,2 @@
-[] mensaje= "Hola mundo!!"
-    print(mensaje)
+mensaje = "¡Hola Mundo!"
+print(mensaje)
