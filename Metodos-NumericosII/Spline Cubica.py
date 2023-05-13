@@ -58,9 +58,23 @@ def spline(x, y, val):
             dx= val- x[i]
             #Calcula el valor de la interpolacion
             result= a[i]+ b[i]* dx+ c[i]* dx* dx+ d[i]* dx* dx* dx
-
-            print('result')
             #Devuelve el valor interpolado de y para x=val
             return result
     #devuelve  0 si el valor de x no esta en el rango de los puntos
     return 0.0
+
+#Solicita al usuario a que infrese los datos de los punto
+n= int(input("Ingrese el numero de puntos: "))
+x= np.zeros(n)
+y= np. zeros(n)
+for i in range (n):
+    x[i], y[i]= map(float, input("Ingrese el valor de x paara el punto {}: " .format(i+1)))
+
+#Solicita al usuario que ingrese el valor de x para el cual quiere calcular la interpolacion
+val= float(input("Ingrese el valor de x para el cual quiere obtener la interpolacion: "))
+
+#Calcular la interpolacion y mostrar el resultado
+result= spline(x, y, val)
+
+#Muestra eñ resultado
+print ("El valor interpoladdo de y para x = {} es {}" .format(val, result))
